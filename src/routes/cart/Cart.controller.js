@@ -41,8 +41,8 @@ const addToCart = async (req, res) => {
 const getCart = async (req, res) => {
     const userId = req.session.userID//req.headers['user-id'];
 
-    const cart = await Cart.findOne({ userId });
-    if (!cart || cart.products === []) {
+    const cart = await Cart.findOne({ userId }).populate('products');
+    if (!cart || cart.products.length === 0) {
         return res.status(404).json({
             Msg: 'Cart Empty'
         });
@@ -58,7 +58,7 @@ const removeCart = async (req, res) => {
         const userId = req.session.userID;
 
         const cart = await Cart.findOne({ userId });
-        if (!cart || JSON.stringify(cart.products) === JSON.stringify([])) {
+        if (!cart || cart.products.length === 0) {
             return res.status(404).json({
                 Msg: 'Cart Empty'
             });
