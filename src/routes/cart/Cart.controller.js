@@ -58,8 +58,7 @@ const removeCart = async (req, res) => {
         const userId = req.session.userID;
 
         const cart = await Cart.findOne({ userId });
-        console.log(cart.products === []);
-        if (!cart || cart.products === []) {
+        if (!cart || JSON.stringify(cart.products) === JSON.stringify([])) {
             return res.status(404).json({
                 Msg: 'Cart Empty'
             });
