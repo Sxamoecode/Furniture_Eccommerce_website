@@ -41,7 +41,10 @@ const addToCart = async (req, res) => {
 const getCart = async (req, res) => {
     const userId = req.session.userID//req.headers['user-id'];
 
-    const cart = await Cart.findOne({ userId }).populate('products');
+    const cart = await Cart.findOne({ userId }).populate({
+        path: 'products',
+        select: '-createdAt -updatedAt -__v'
+    });
     if (!cart || cart.products.length === 0) {
         return res.status(404).json({
             Msg: 'Cart Empty'
