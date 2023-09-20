@@ -18,11 +18,12 @@ const addToCart = async (req, res) => {
           // Attach the cart to the request object for future use
           req.cart = cart;
 
-          const productId = req.body.productId;
+          const productName = req.body.productName;
           // Find the product by ID
-          Product.findById(productId)
+          Product.findOne({name: productName})
           .then(async (product) => {
             if (!product) {
+                console.log(product)
                 return res.status(404).json({ error: 'Product not found' });
             }
             // Add the product to the user's cart
