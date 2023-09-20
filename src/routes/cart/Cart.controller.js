@@ -27,14 +27,12 @@ const addToCart = async (req, res) => {
             }
             // Add the product to the user's cart
             req.cart.products.push(product);
-            return req.cart.save();
-            })
-            .then(() => {
-                res.json({ message: 'Product added to cart successfully' });
+            req.cart.save();
+            return res.json({ message: 'Product added to cart successfully' });
             });
         })
         .catch((error) => {
-            res.status(500).json({ error: 'Internal server error' });
+            return res.status(500).json({ error: 'Internal server error' });
         });
 }
 
