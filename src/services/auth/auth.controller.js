@@ -8,6 +8,11 @@ const {
       const requestPasswordResetService = await requestPasswordReset(
         req.body.email
       );
+      if (requestPasswordResetService === false) {
+        return res.status(404).json({
+          Msg: "Not a registered user"
+        });
+      }
       return res.json(requestPasswordResetService);
     } catch (error) {
       console.log(error.message);
