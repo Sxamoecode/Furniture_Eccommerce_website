@@ -1,7 +1,7 @@
 # A FURNITURE E-COMMERCE WEBSITE
 ## BACKEND
 
-This project is a backend e-commerce website built using Express.js and MongoDB as the database. It provides essential functionalities such as user authentication, including login, logout, and password reset, as well as a shopping cart feature. The cart functionality allows users to create, retrieve, and delete items from their cart. Additionally, specific functionalities are restricted to admin users. The project also incorporates several middlewares to enhance security, validate requests, and handle common tasks efficiently. With this powerful backend solution, you can build a robust and secure e-commerce platform.
+This project is a backend e-commerce website built using Express.js as the framework and MongoDB as the database. It provides essential functionalities such as user authentication, including login, logout, and password reset, as well as a shopping cart feature. The cart functionality allows users to create, retrieve, and delete items from their cart. Additionally, specific functionalities are restricted to admin users. The project also incorporates several middlewares to enhance security, validate requests, and handle common tasks efficiently. With this powerful backend solution, you can build a robust and secure e-commerce platform.
 
 ## Table of Contents
 

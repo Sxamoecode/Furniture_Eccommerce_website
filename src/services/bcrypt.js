@@ -19,7 +19,7 @@ const hashed = hashit(pw);
 console.log(hashed);
 comp = compare(pw, hashed);
 console.log(comp);
- */
+*/
 
 module.exports = {
     hashit,
