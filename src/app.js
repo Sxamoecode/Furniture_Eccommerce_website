@@ -10,7 +10,7 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(cors({
-    origin: 'http://localhost:7000'
+    origin: '*'
  }));
  app.use(bodyParser.json());
  app.use(express.urlencoded({
